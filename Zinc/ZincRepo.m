@@ -33,7 +33,6 @@
 #import "NSFileManager+Zinc.h"
 #import "NSData+Zinc.h"
 #import "ZincJSONSerialization.h"
-#import "ZincHTTPRequestOperation.h"
 #import "ZincSerialQueueProxy.h"
 #import "ZincErrors.h"
 #import "ZincTrackingInfo.h"
@@ -495,7 +494,7 @@ static NSString* kvo_taskIsFinished = @"kvo_taskIsFinished";
 
 - (void) addOperation:(NSOperation*)operation
 {
-    if ([operation isKindOfClass:[ZincNetworkOperation class]]) {
+    if ([operation isKindOfClass:[AFURLConnectionOperation class]]) {
         [self.networkQueue addOperation:operation];
     } else {
         [self.queueGroup addOperation:operation];

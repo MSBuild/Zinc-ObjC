@@ -8,14 +8,12 @@
 
 #import "ZincDownloadTask.h"
 
-@class ZincHTTPRequestOperation;
-
 @interface ZincDownloadTask ()
 
 @property (readwrite) NSInteger bytesRead;
 @property (readwrite) NSInteger totalBytesToRead;
 
-- (ZincHTTPRequestOperation *) queuedOperationForRequest:(NSURLRequest *)request
+- (AFHTTPRequestOperation *) queuedOperationForRequest:(NSURLRequest *)request
                                           outputStream:(NSOutputStream *)outputStream
                                                  context:(id)context;
 

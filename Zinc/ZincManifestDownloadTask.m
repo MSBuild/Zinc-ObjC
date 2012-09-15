@@ -15,7 +15,6 @@
 #import "ZincRepo+Private.h"
 #import "ZincManifest.h"
 #import "ZincResource.h"
-#import "ZincHTTPURLConnectionOperation.h"
 #import "NSData+Zinc.h"
 #import "ZincEvent.h"
 #import "ZincErrors.h"
@@ -68,7 +67,7 @@
         
         NSString* bundleName = [ZincBundle bundleNameFromBundleId:self.bundleId];
         NSURLRequest* request = [source zincManifestURLRequestForBundleName:bundleName version:self.version];
-        ZincHTTPRequestOperation* requestOp = [self queuedOperationForRequest:request outputStream:nil context:nil];
+        AFHTTPRequestOperation* requestOp = [self queuedOperationForRequest:request outputStream:nil context:nil];
         
         [requestOp waitUntilFinished];
         if (self.isCancelled) return;

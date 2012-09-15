@@ -15,7 +15,6 @@
 #import "ZincErrors.h"
 #import "ZincEvent.h"
 #import "ZincSource.h"
-#import "ZincHTTPRequestOperation.h"
 #import "NSFileManager+Zinc.h"
 #import "ZincArchiveExtractOperation.h"
 
@@ -67,7 +66,7 @@
         
         NSURLRequest* request = [source urlRequestForArchivedBundleName:bundleName version:self.version flavor:flavor];
         NSOutputStream* outStream = [[[NSOutputStream alloc] initToFileAtPath:downloadPath append:NO] autorelease];
-        ZincHTTPRequestOperation* downloadOp = [self queuedOperationForRequest:request outputStream:outStream context:self.bundleId];
+        AFHTTPRequestOperation* downloadOp = [self queuedOperationForRequest:request outputStream:outStream context:self.bundleId];
         
         [downloadOp waitUntilFinished];
         if (self.isCancelled) return;
