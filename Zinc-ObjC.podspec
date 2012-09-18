@@ -7,11 +7,12 @@ Pod::Spec.new do |s|
   s.source   = { :git => 'https://github.com/mindsnacks/Zinc-ObjC.git', :commit => '118995ca908dc947c8363dfd4e88033a73142c99' }
   s.license  = { :type => 'MIT', :file => 'LICENSE' }
   s.platform = :ios, '5.0'
-  s.source_files = 'Zinc'
+  s.source_files = 'Zinc', 'Dependencies/**/*{h,m}'
   s.public_header_files = 'Zinc/Zinc.h'
+  s.prefix_header_file = 'Zinc/Zinc-Prefix.pch'
 
   s.frameworks = 'Foundation', 'CFNetwork', 'SystemConfiguration'
-  s.libraries = 'libz'
+  s.libraries = 'z'
 
   #s.xcconfig = { 'OTHER_LDFLAGS' => '-framework SomeRequiredFramework' }
 

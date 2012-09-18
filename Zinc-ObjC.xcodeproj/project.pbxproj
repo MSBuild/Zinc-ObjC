@@ -1080,6 +1080,7 @@
 		};
 		B340F991148D52D800206F86 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F79EA17AA69545FCB37A4FE3 /* Pods-test.xcconfig */;
 			buildSettings = {
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
@@ -1099,6 +1100,7 @@
 		};
 		B340F992148D52D800206F86 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F79EA17AA69545FCB37A4FE3 /* Pods-test.xcconfig */;
 			buildSettings = {
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
@@ -1162,7 +1164,6 @@
 		};
 		B38743231489B830004B227B /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 7BC4D1E3D60145399E39FAED /* Pods.xcconfig */;
 			buildSettings = {
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "ZincDemo/Zinc-Demo-Prefix.pch";
